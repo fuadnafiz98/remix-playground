@@ -1,32 +1,29 @@
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxList,
+  ComboboxOption,
+  ComboboxOptionText,
+} from "@reach/combobox";
+import "@reach/combobox/styles.css";
+
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div>
+      <h4 id="demo">Basic, Fixed List Combobox</h4>
+      <Combobox aria-labelledby="demo">
+        <ComboboxInput />
+        <ComboboxPopover>
+          <ComboboxList className="bg-gray-200 space-y-2">
+            <ComboboxOption value="Apple" className="hover:bg-purple-600" />
+            <ComboboxOption value="Banana" />
+            <ComboboxOption value="Orange" />
+            <ComboboxOption value="Pineapple" />
+            <ComboboxOption value="Kiwi" />
+          </ComboboxList>
+        </ComboboxPopover>
+      </Combobox>
     </div>
   );
 }
